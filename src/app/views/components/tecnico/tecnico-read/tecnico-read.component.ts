@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { Tecnico } from 'src/app/models/tecnico';
 import { TecnicoService } from 'src/app/services/tecnico.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tecnico-read',
@@ -18,7 +19,10 @@ export class TecnicoReadComponent implements AfterViewInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private service : TecnicoService){} 
+  constructor(
+    private service : TecnicoService,
+    private router: Router    
+    ){} 
 
   ngAfterViewInit() {
     // comentado a linha abaixo pq se deixar ele e no DataSource deixar o array ele não trás a paginação de forma correta
@@ -34,6 +38,10 @@ export class TecnicoReadComponent implements AfterViewInit {
       // paginator trazido do método ViewInit para acertar a paginação do Table Tecnicos
       this.dataSource.paginator = this.paginator;
     })
+  }
+
+  navigateToCreate(): void{
+    this.router.navigate(['tecnico/create'])
   }
 }
 
