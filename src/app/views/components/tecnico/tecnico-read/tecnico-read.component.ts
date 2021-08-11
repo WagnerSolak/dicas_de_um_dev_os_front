@@ -21,14 +21,18 @@ export class TecnicoReadComponent implements AfterViewInit {
   constructor(private service : TecnicoService){} 
 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+    // comentado a linha abaixo pq se deixar ele e no DataSource deixar o array ele não trás a paginação de forma correta
+    // this.dataSource.paginator = this.paginator;
     this.findAll();
   }
 
   findAll():void{
     this.service.findAll().subscribe((resposta) => {
       this.tecnicos = resposta;
-      console.log(this.tecnicos)
+      // adicionado para ele buscar os objetos e "popular" a tabela
+      this.dataSource = new MatTableDataSource<Tecnico>(this.tecnicos);
+      // paginator trazido do método ViewInit para acertar a paginação do Table Tecnicos
+      this.dataSource.paginator = this.paginator;
     })
   }
 }
