@@ -24,8 +24,8 @@
 
     
 
-      <button class="mat-elevation-z8" [disabled]="errorValidName() || errorValidCpf() || errorValidTelefone()" mat-stroked-button color="basic">SALVAR</button>
-      <button class="mat-elevation-z8" class="cancelar" mat-stroked-button color="warn">CANCELAR</button>
+      <button class="mat-elevation-z8" (click)="update()" [disabled]="errorValidName() || errorValidCpf() || errorValidTelefone()" mat-stroked-button color="basic">ATUALIZAR</button>
+      <button class="mat-elevation-z8" (click)="cancel()" class="cancelar" mat-stroked-button color="warn">CANCELAR</button>
 
     </mat-card>
 </form>
