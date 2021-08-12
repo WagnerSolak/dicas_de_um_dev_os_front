@@ -1,3 +1,9 @@
+h1{
+  text-align: center;
+  font-size: 2rem;
+  font-family: arial, sans-serif;
+  font-weight: bold;
+}
 .create{
     width: 90%;
     margin-right: auto;
