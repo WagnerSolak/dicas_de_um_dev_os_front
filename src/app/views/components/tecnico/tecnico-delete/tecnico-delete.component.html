@@ -16,7 +16,7 @@
         <input [(ngModel)]="tecnico.telefone" name="telefone" matInput disabled>
       </mat-form-field>
 
-      <button class="mat-elevation-z8"  mat-stroked-button color="basic">DELETAR</button>
+      <button class="mat-elevation-z8" (click)="delete()"  mat-stroked-button color="basic">DELETAR</button>
       <button class="mat-elevation-z8" (click)="cancel()" class="cancelar" mat-stroked-button color="warn">CANCELAR</button>
 
     </mat-card>
