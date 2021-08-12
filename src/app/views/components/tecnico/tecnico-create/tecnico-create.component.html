@@ -1,4 +1,5 @@
-<form class="form">
+<form class="form" >
+    <mat-card>
     <h1>Criando um Novo Técnico</h1>
     <mat-form-field class="full-width" appearance="fill">
       <mat-label>Nome</mat-label>
@@ -21,7 +22,10 @@
         <mat-error *ngIf="telefone.invalid">{{ errorValidTelefone() }}</mat-error>
       </mat-form-field>
 
-      <button (click)="create()" [disabled]="errorValidName() || errorValidCpf() || errorValidTelefone()" 
-      mat-stroked-button color="basic">CRIAR</button>
-      <button (click)="cancel()" class="cancelar" mat-stroked-button color="warn">CANCELAR</button>
+    
+
+      <button class="mat-elevation-z8" (click)="create()" [disabled]="errorValidName() || errorValidCpf() || errorValidTelefone()" mat-stroked-button color="basic">CRIAR</button>
+      <button class="mat-elevation-z8" (click)="cancel()" class="cancelar" mat-stroked-button color="warn">CANCELAR</button>
+
+    </mat-card>
 </form>
