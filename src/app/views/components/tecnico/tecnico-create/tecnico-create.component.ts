@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Tecnico } from 'src/app/models/tecnico';
 import { TecnicoService } from 'src/app/services/tecnico.service';
@@ -12,10 +13,14 @@ export class TecnicoCreateComponent implements OnInit {
 
   tecnico: Tecnico = {
     id: '',
-    nome: 'Solak',
-    cpf: '799.119.730-18',
-    telefone: '(44)3030-4040'
+    nome: '',
+    cpf: '',
+    telefone: ''
   }
+
+  nome = new FormControl('', [Validators.minLength(5)])
+  cpf = new FormControl('', [Validators.minLength(11)])
+  telefone = new FormControl('', [Validators.minLength(11)])
 
   constructor(
     private router: Router,
@@ -36,8 +41,31 @@ export class TecnicoCreateComponent implements OnInit {
     }, err => {
       if(err.error.error.match('já cadastrado')){
         this.service.message('CPF já cadastrado na base de dados!')
+      } else if(err.error.errors[0].message === "número do registro de contribuinte individual brasileiro (CPF) inválido"){
+        this.service.message("CPF inválido!")
+        
       }
     })
   }
 
+  errorValidName(){
+    if(this.nome.invalid){
+      return 'O nome deve ter entre 5 e 100 caracteres!'
+    }
+    return false;
+  }
+
+  errorValidCpf(){
+    if(this.cpf.invalid){
+      return 'O CPF deve ter entre 11 e 15 caracteres!'
+    }
+    return false;
+  }
+
+  errorValidTelefone(){
+    if(this.telefone.invalid){
+      return 'O Telefone deve ter entre 11 e 18 caracteres!'
+    }
+    return false;
+  }
 }
