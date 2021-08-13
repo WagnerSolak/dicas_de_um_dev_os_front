@@ -8,7 +8,7 @@ import { OS } from '../models/os';
 @Injectable({
   providedIn: 'root'
 })
-export class OSService {
+export class OsService {
 
   baseUrl: String = environment.baseUrl;
 
