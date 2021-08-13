@@ -37,5 +37,17 @@ h1{
   #delete {
     color:tomato
   }
+
+  td.baixa {
+  color: green
+  }
+
+  td.media{
+    color: yellow;
+  }
+  
+  td.alta{
+    color: rgb(252, 22, 22);
+  }
   
   

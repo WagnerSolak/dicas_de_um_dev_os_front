@@ -63,6 +63,17 @@ export class OsReadComponent implements AfterViewInit {
       })
     })
   }
+
+  //verifica se o item que recebemos como parâmetro, retornando o valor
+  prioridade(x : any) {
+    if(x == 'BAIXA') {
+      return 'baixa'
+    } else if (x == 'MEDIA')  {
+      return 'media'
+    } else{
+      return 'alta'
+    }
+   }
 }
 
 
