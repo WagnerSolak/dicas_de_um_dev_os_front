@@ -57,4 +57,8 @@ export class OsCreateComponent implements OnInit {
     })
   }
 
+  cancel(): void {
+    this.router.navigate(['os'])
+  }
+
 }

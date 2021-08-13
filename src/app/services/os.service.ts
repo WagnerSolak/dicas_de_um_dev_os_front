@@ -33,7 +33,9 @@ export class OsService {
     }
 
     update(os: OS):Observable<OS>{
-      const url = `${this.baseUrl}/os/${os.id}`;
+      // const url = `${this.baseUrl}/os/${os.id}`; // Resolver Cors Policy em console nav
+      // por causa da implementação realizada no back end metodo put
+      const url = `${this.baseUrl}/os`;
       return this.http.put<OS>(url, os);
     }
 
