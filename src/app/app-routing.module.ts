@@ -13,6 +13,7 @@ import { OsReadComponent } from './views/components/os/os-read/os-read.component
 import { OsCreateComponent } from './views/components/os/os-create/os-create.component';
 import { OsUpdateComponent } from './views/components/os/os-update/os-update.component';
 import { OsDescriptionComponent } from './views/components/os/os-description/os-description.component';
+import { OsClosedComponent } from './views/components/os/os-closed/os-closed.component';
 
 
 const routes: Routes = [
@@ -55,6 +56,10 @@ const routes: Routes = [
 {
   path: 'os',
   component: OsReadComponent
+},
+{
+  path: 'os/closed',
+  component: OsClosedComponent
 },
 {
   path: 'os/create',

@@ -1,0 +1,53 @@
+h1{
+    text-align: center;
+    font-size: 2rem;
+    font-family: arial, sans-serif;
+    font-weight: bold;
+  }
+  .create{
+      width: 90%;
+      margin-right: auto;
+      margin-left: auto;
+  }
+  
+  .create h1{
+    text-align: center;;
+    font-size: 2rem;
+  }
+  
+  .create button{
+    width: 100%;
+    margin: 1rem auto;
+  }
+  
+  .container{
+      width: 90%;
+      margin-right: auto;
+      margin-left: auto;
+  }
+  
+  table{
+    width: 100%;
+  }
+  
+  #edit {
+    color: #FFA54F;
+  }
+  
+  #delete {
+    color:tomato
+  }
+
+  td.baixa {
+  color: green
+  }
+
+  td.media{
+    color: yellow;
+  }
+  
+  td.alta{
+    color: rgb(252, 22, 22);
+  }
+  
+  
